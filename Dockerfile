@@ -14,12 +14,10 @@ COPY config/php.ini /usr/local/etc/php/
 
 RUN curl https://drupalconsole.com/installer -L -o drupal.phar \
   && mv drupal.phar /usr/local/bin/drupal \
-  && chmod +x /usr/local/bin/drupal
+  && chmod +x /usr/local/bin/drupal \
+  && drupal init
 
 VOLUME ["/app"]
 WORKDIR /app
 
-RUN drupal --version
-
 ENTRYPOINT ["drupal"]
-
