@@ -20,4 +20,4 @@ RUN curl https://drupalconsole.com/installer -L -o drupal.phar \
 VOLUME ["/app"]
 WORKDIR /app
 
-ENTRYPOINT ["drupal"]
+ENTRYPOINT ["drupal", "--ansi"]
